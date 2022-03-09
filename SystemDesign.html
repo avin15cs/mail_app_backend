@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!-- saved from url=(0119)https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1#G1yJcxMAH4hYHhYPJtbryehQhZtAxDVZVN -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Flowchart Maker &amp; Online Diagram Software</title>
+    <meta name="application-name" content="diagrams.net"><meta name="apple-mobile-web-app-title" content="diagrams.net">
+    
+    <meta name="Description" content="diagrams.net is free online diagram software for making flowcharts, process diagrams, org charts, UML, ER and network diagrams">
+    <meta name="Keywords" content="diagram, online, flow chart, flowchart maker, uml, erd">
+    <meta itemprop="name" content="diagrams.net - free flowchart maker and diagrams online">
+	<meta itemprop="description" content="diagrams.net is a free online diagramming application  and flowchart maker . You can use it to create UML, entity relationship,
+		org charts, BPMN and BPM, database schema and networks. Also possible are telecommunication network, workflow, flowcharts, maps overlays and GIS, electronic 
+		circuit and social network diagrams.">
+	<meta itemprop="image" content="https://lh4.googleusercontent.com/-cLKEldMbT_E/Tx8qXDuw6eI/AAAAAAAAAAs/Ke0pnlk8Gpg/w500-h344-k/BPMN%2Bdiagram%2Brc2f.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#d89000">
+	<script src="./Flowchart Maker &amp; Online Diagram Software_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" defer="true" src="./Flowchart Maker &amp; Online Diagram Software_files/extensions.min.js.download"></script><script type="text/javascript" defer="true" src="./Flowchart Maker &amp; Online Diagram Software_files/stencils.min.js.download"></script><script type="text/javascript" defer="true" src="./Flowchart Maker &amp; Online Diagram Software_files/shapes-14-6-5.min.js.download"></script><script type="text/javascript" defer="true" src="./Flowchart Maker &amp; Online Diagram Software_files/api.js.download" gapi_processed="true"></script><script async="" src="./Flowchart Maker &amp; Online Diagram Software_files/analytics.js.download"></script><script type="text/javascript" defer="true" src="./Flowchart Maker &amp; Online Diagram Software_files/app.min.js.download"></script><script type="text/javascript">
+		/**
+		 * URL Parameters and protocol description are here:
+		 *
+		 * https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported
+		 *
+		 * Parameters for developers:
+		 *
+		 * - dev=1: For developers only
+		 * - test=1: For developers only
+		 * - export=URL for export: For developers only
+		 * - ignoremime=1: For developers only (see DriveClient.js). Use Cmd-S to override mime.
+		 * - createindex=1: For developers only (see etc/build/README)
+		 * - filesupport=0: For developers only (see Editor.js in core)
+		 * - savesidebar=1: For developers only (see Sidebar.js)
+		 * - pages=1: For developers only (see Pages.js)
+		 * - lic=email: For developers only (see LicenseServlet.java)
+		 * --
+		 * - networkshapes=1: For testing network shapes (temporary)
+		 */
+		var urlParams = (function()
+		{
+			var result = new Object();
+			var params = window.location.search.slice(1).split('&');
+			
+			for (var i = 0; i < params.length; i++)
+			{
+				var idx = params[i].indexOf('=');
+				
+				if (idx > 0)
+				{
+					result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+				}
+			}
+			
+			return result;
+		})();
+		
+		// Forces CDN caches by passing URL parameters via URL hash
+		if (window.location.hash != null && window.location.hash.substring(0, 2) == '#P')
+		{
+			try
+			{
+				urlParams = JSON.parse(decodeURIComponent(window.location.hash.substring(2)));
+				
+				if (urlParams.hash != null)
+				{
+					window.location.hash = urlParams.hash;
+				}
+			}
+			catch (e)
+			{
+				// ignore
+			}
+		}
+		
+		// Global variable for desktop
+		var mxIsElectron = window && window.process && window.process.type;
+
+		// Redirects page if required
+		if (urlParams['dev'] != '1')
+		{
+			(function()
+			{
+				var proto = window.location.protocol;
+				
+				if (!mxIsElectron)
+				{
+					var host = window.location.host;
+		
+					// Redirects apex, drive and rt to www
+					if (host === 'draw.io' || host === 'rt.draw.io' || host === 'drive.draw.io')
+					{
+						host = 'www.draw.io';
+					}
+					
+					var href = proto + '//' + host + window.location.href.substring(
+							window.location.protocol.length +
+							window.location.host.length + 2);
+		
+					// Redirects if href changes
+					if (href != window.location.href)
+					{
+						window.location.href = href;
+					}
+				}
+			})();
+		}
+		
+		/**
+		 * Adds meta tag to the page.
+		 */
+		function mxmeta(name, content, httpEquiv)
+		{
+			try
+			{
+				var s = document.createElement('meta');
+				
+				if (name != null) 
+				{
+					s.setAttribute('name', name);
+				}
+
+				s.setAttribute('content', content);
+				
+				if (httpEquiv != null) 
+				{
+					s.setAttribute('http-equiv', httpEquiv);
+				}
+
+			  	var t = document.getElementsByTagName('meta')[0];
+			  	t.parentNode.insertBefore(s, t);
+			}
+			catch (e)
+			{
+				// ignore
+			}
+		};
+		
+		/**
+		 * Synchronously adds scripts to the page.
+		 */
+		function mxscript(src, onLoad, id, dataAppKey, noWrite)
+		{
+			var defer = onLoad == null && !noWrite;
+			
+			if ((urlParams['dev'] != '1' && typeof document.createElement('canvas').getContext === "function") ||
+				onLoad != null || noWrite)
+			{
+				var s = document.createElement('script');
+				s.setAttribute('type', 'text/javascript');
+				s.setAttribute('defer', 'true');
+				s.setAttribute('src', src);
+
+				if (id != null)
+				{
+					s.setAttribute('id', id);
+				}
+				
+				if (dataAppKey != null)
+				{
+					s.setAttribute('data-app-key', dataAppKey);
+				}
+				
+				if (onLoad != null)
+				{
+					var r = false;
+				
+					s.onload = s.onreadystatechange = function()
+					{
+						if (!r && (!this.readyState || this.readyState == 'complete'))
+						{
+				      		r = true;
+				      		onLoad();
+						}
+				  	};
+				}
+			  	
+			  	var t = document.getElementsByTagName('script')[0];
+			  	
+			  	if (t != null)
+			  	{
+			  		t.parentNode.insertBefore(s, t);
+			  	}
+			}
+			else
+			{
+				document.write('<script src="' + src + '"' + ((id != null) ? ' id="' + id +'" ' : '') +
+					((dataAppKey != null) ? ' data-app-key="' + dataAppKey +'" ' : '') + '></scr' + 'ipt>');
+			}
+		};
+
+		/**
+		 * Asynchronously adds scripts to the page.
+		 */
+		function mxinclude(src)
+		{
+			var g = document.createElement('script');
+			g.type = 'text/javascript';
+			g.async = true;
+			g.src = src;
+			
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(g, s);
+		};
+		
+		/**
+		 * Adds meta tags with application name (depends on offline URL parameter)
+		 */
+		(function()
+		{
+			var name = 'diagrams.net';
+			mxmeta('apple-mobile-web-app-title', name);
+			mxmeta('application-name', name);
+
+			if (mxIsElectron)
+			{
+				mxmeta(null, 'default-src \'self\' \'unsafe-inline\'; connect-src \'self\' https://*.draw.io https://fonts.googleapis.com https://fonts.gstatic.com; img-src * data:; media-src *; font-src *; style-src-elem \'self\' \'unsafe-inline\' https://fonts.googleapis.com', 'Content-Security-Policy');
+			}
+		})();
+		
+		// Checks for local storage
+		var isLocalStorage = false;
+		
+		try
+		{
+			isLocalStorage = urlParams['local'] != '1' && typeof(localStorage) != 'undefined';
+		}
+		catch (e)
+		{
+			// ignored
+		}
+
+		var mxScriptsLoaded = false, mxWinLoaded = false;
+		
+		function checkAllLoaded()
+		{
+			if (mxScriptsLoaded && mxWinLoaded)
+			{
+				App.main();				
+			}
+		};
+		
+		var t0 = new Date();
+
+		// Changes paths for local development environment
+		if (urlParams['dev'] == '1')
+		{
+			// Used to request grapheditor/mxgraph sources in dev mode
+			var mxDevUrl = document.location.protocol + '//devhost.jgraph.com/drawio/src/main';
+			
+			// Used to request draw.io sources in dev mode
+			var drawDevUrl = document.location.protocol + '//devhost.jgraph.com/drawio/src/main/webapp/';
+			var geBasePath = drawDevUrl + '/js/grapheditor';
+			var mxBasePath = mxDevUrl + '/mxgraph';
+			
+			if (document.location.protocol == 'file:')
+			{
+				geBasePath = './js/grapheditor';
+				mxBasePath = './mxgraph';
+				drawDevUrl = './';
+				
+				// Forces includes for dev environment in node.js
+				mxForceIncludes = true;
+			}
+
+			mxForceIncludes = false;
+
+			mxscript(drawDevUrl + 'js/PreConfig.js');
+			mxscript(drawDevUrl + 'js/diagramly/Init.js');
+			mxscript(geBasePath + '/Init.js');
+			mxscript(mxBasePath + '/mxClient.js');
+			
+			// Adds all JS code that depends on mxClient. This indirection via Devel.js is
+			// required in some browsers to make sure mxClient.js (and the files that it
+			// loads asynchronously) are available when the code loaded in Devel.js runs.
+			mxscript(drawDevUrl + 'js/diagramly/Devel.js');
+			
+			// Electron
+			if (mxIsElectron)
+			{
+				mxscript('js/diagramly/DesktopLibrary.js');
+				mxscript('js/diagramly/ElectronApp.js');
+			}
+			
+			mxscript(drawDevUrl + 'js/PostConfig.js');
+		}
+		else
+		{
+			(function()
+			{
+				var hostName = window.location.hostname;
+				
+				// Supported domains are *.draw.io and the packaged version in Quip
+				var supportedDomain = (hostName.substring(hostName.length - 8, hostName.length) === '.draw.io') ||
+					(hostName.substring(hostName.length - 13, hostName.length) === '.diagrams.net');
+				
+				function loadAppJS()
+				{
+					mxscript('js/app.min.js', function()
+					{
+						mxScriptsLoaded = true;
+						checkAllLoaded();
+						
+						// Electron
+						if (mxIsElectron)
+						{
+							mxscript('js/diagramly/DesktopLibrary.js', function()
+							{
+								mxscript('js/diagramly/ElectronApp.js', function()
+								{
+									mxscript('js/extensions.min.js', function()
+									{
+										mxscript('js/stencils.min.js', function()
+										{
+											mxscript('js/shapes-14-6-5.min.js', function()
+											{
+												mxscript('js/PostConfig.js');
+											});
+										});
+									});
+								});
+							});
+						}
+						else if (!supportedDomain)
+						{
+							mxscript('js/PostConfig.js');
+						}
+					});
+				};
+				
+				if (!supportedDomain || mxIsElectron)
+				{
+					mxscript('js/PreConfig.js', loadAppJS);
+				}
+				else
+				{
+					loadAppJS();
+				}
+			})();
+		}
+
+		// Adds basic error handling
+		window.onerror = function()
+		{
+			var status = document.getElementById('geStatus');
+			
+			if (status != null)
+			{
+				status.innerHTML = 'Page could not be loaded. Please try refreshing.';
+			}
+		};
+	</script>
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/plgmlhohecdddhbmmkncjdmlhcmaachm">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://viewer.diagrams.net/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://viewer.diagrams.net/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://viewer.diagrams.net/images/favicon-16x16.png">
+	<link rel="mask-icon" href="https://viewer.diagrams.net/images/safari-pinned-tab.svg" color="#d89000">
+    <link rel="stylesheet" type="text/css" href="./Flowchart Maker &amp; Online Diagram Software_files/grapheditor.css">
+    <link rel="preconnect" href="https://storage.googleapis.com/">
+    <link rel="canonical" href="https://app.diagrams.net/">
+	<link rel="manifest" href="https://viewer.diagrams.net/images/manifest.json">
+	<link rel="shortcut icon" href="https://viewer.diagrams.net/favicon.ico">
+	<style type="text/css">
+		body { overflow:hidden; }
+		div.picker { z-index: 10007; }
+		.geSidebarContainer .geTitle input {
+			font-size:8pt;
+			color:#606060;
+		}
+		.geBlock {
+			z-index:-3;
+			margin:100px;
+			margin-top:40px;
+			margin-bottom:30px;
+			padding:20px;
+			text-align:center;
+			min-width:50%;
+		}
+		.geBlock h1, .geBlock h2 {
+			margin-top:0px;
+			padding-top:0px;
+		}
+		.geEditor *:not(.geScrollable)::-webkit-scrollbar {
+		    width:14px;
+		    height:14px;
+		}
+		.geEditor ::-webkit-scrollbar-track {
+			background-clip:padding-box;
+			border:solid transparent;
+			border-width:1px;
+		}
+		.geEditor ::-webkit-scrollbar-corner {
+			background-color:transparent;
+		}
+		.geEditor ::-webkit-scrollbar-thumb {
+			background-color:rgba(0,0,0,.1);
+			background-clip:padding-box;
+			border:solid transparent;
+			border-radius:10px;
+		}
+		.geEditor ::-webkit-scrollbar-thumb:hover {
+			background-color:rgba(0,0,0,.4);
+		}
+		.geTemplate {
+			border:1px solid transparent;
+			display:inline-block;
+			_display:inline;
+			vertical-align:top;
+			border-radius:3px;
+			overflow:hidden;
+			font-size:14pt;
+			cursor:pointer;
+			margin:5px;
+		}
+	</style>
+	<!-- Workaround for binary XHR in IE 9/10, see App.loadUrl -->
+	<!--[if (IE 9)|(IE 10)]><!-->
+		<script type="text/vbscript">
+			Function mxUtilsBinaryToArray(Binary)
+				Dim i
+				ReDim byteArray(LenB(Binary))
+				For i = 1 To LenB(Binary)
+					byteArray(i-1) = AscB(MidB(Binary, i, 1))
+				Next
+				mxUtilsBinaryToArray = byteArray
+			End Function
+		</script>
+	<!--<![endif]-->
+<style type="text/css"></style><link rel="stylesheet" href="./Flowchart Maker &amp; Online Diagram Software_files/common.css" charset="UTF-8" type="text/css"><script type="text/javascript" src="./Flowchart Maker &amp; Online Diagram Software_files/MathJax.js.download"></script><style type="text/css">div.MathJax_SVG_Display { position: static; }
+span.MathJax_SVG { position: static !important; }</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_SVG > div {display: inline-block}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block!important}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_SVG_test.mjx-test-display {display: table!important}
+.MathJax_SVG_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_SVG_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_SVG_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.mjx-test-inline .MathJax_SVG_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_SVG_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_SVG_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style>.picker-dialog-frame{width:100%;height:100%;border:0;overflow:hidden}.picker-dialog-bg{z-index:1000}.picker-dialog,.picker-dialog-bg{position:absolute;top:0;left:0;background-color:#fff}.picker-dialog{border:1px solid #acacac;width:auto;padding:0;z-index:1001;overflow:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}.picker-dialog-content{font-size:0;padding:0}.picker-dialog-buttons,.picker-dialog-title{display:none}</style></head>
+<body class="geEditor" style="background-color: rgb(255, 255, 255);"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"></defs></svg></div><div id="MathJax_Message" style="display: none;"></div>
+
+<script type="text/javascript">
+/**
+ * Main
+ */
+if (navigator.userAgent != null && navigator.userAgent.toLowerCase().
+	indexOf(' electron/') >= 0 && typeof process !== 'undefined' && process.versions.electron < 5)
+{
+	// Redirects old Electron app to latest version
+	var div = document.getElementById('geInfo');
+	
+	if (div != null)
+	{
+		div.innerHTML = '<center><h2>You are using an out of date version of this app.<br>Please download the latest version ' +
+			'<a href="https://github.com/jgraph/drawio-desktop/releases/latest" target="_blank">here</a>.</h2></center>';
+	}
+}
+else
+{
+	if (urlParams['dev'] != '1' && typeof document.createElement('canvas').getContext === "function")
+	{
+		window.addEventListener('load', function()
+		{
+			mxWinLoaded = true;
+			checkAllLoaded();
+		});
+	}
+	else
+	{
+		App.main();
+	}
+}
+</script>
+
+
+<div class="geDiagramContainer" tabindex="0" style="inset: 0px; border: none; touch-action: none; overflow: auto; cursor: default;"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 1034px; min-height: 749px; position: absolute; background-image: none; background-color: rgb(255, 255, 255);"><defs><filter id="dropShadow"><fegaussianblur in="SourceAlpha" stdDeviation="1.7" result="blur"></fegaussianblur><feoffset in="blur" dx="3" dy="3" result="offsetBlur"></feoffset><feflood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"></feflood><fecomposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></fecomposite><feblend in="SourceGraphic" in2="offsetBlur"></feblend></filter></defs><g transformOrigin="0 0" transform="scale(0.44,0.44)translate(758,-170)"><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 410 200 L 590 200 L 590 333.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 410 200 L 590 200 L 590 333.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 590 338.88 L 586.5 331.88 L 590 333.63 L 593.5 331.88 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="110" y="170" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 200px; margin-left: 111px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">manik</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="110" y="450" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 480px; margin-left: 111px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">modi</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 530 370 L 380 370 L 380 480 L 236.37 480" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 530 370 L 380 370 L 380 480 L 236.37 480" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 231.12 480 L 238.12 476.5 L 236.37 480 L 238.12 483.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="530" y="340" width="120" height="60" fill="#d5e8d4" stroke="#82b366" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 370px; margin-left: 531px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SERVER</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 750 340 C 750 331.72 776.86 325 810 325 C 825.91 325 841.17 326.58 852.43 329.39 C 863.68 332.21 870 336.02 870 340 L 870 480 C 870 488.28 843.14 495 810 495 C 776.86 495 750 488.28 750 480 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path><path d="M 870 340 C 870 348.28 843.14 355 810 355 C 776.86 355 750 348.28 750 340" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 870 340 C 870 348.28 843.14 355 810 355 C 776.86 355 750 348.28 750 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="370" y="420" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 430px; margin-left: 390px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="770" y="380" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 390px; margin-left: 790px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="780" y="390" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 400px; margin-left: 800px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="790" y="400" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 410px; margin-left: 810px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="800" y="410" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 420px; margin-left: 820px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="810" y="420" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 430px; margin-left: 830px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="820" y="430" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 440px; margin-left: 840px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="370" y="190" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 200px; margin-left: 390px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 230 200 L 370 200" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 230 200 L 370 200" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 710 1347.5 L 815 1347.5 L 815 1205 L 912.79 1205.02" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 710 1347.5 L 815 1347.5 L 815 1205 L 912.79 1205.02" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 918.04 1205.02 L 911.04 1208.52 L 912.79 1205.02 L 911.04 1201.52 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 710 1347.5 L 815 1347.5 L 815 1287.5 L 913.63 1287.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 710 1347.5 L 815 1347.5 L 815 1287.5 L 913.63 1287.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 918.88 1287.5 L 911.88 1291 L 913.63 1287.5 L 911.88 1284 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 710 1347.5 L 815 1347.5 L 815 1372.5 L 913.63 1372.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 710 1347.5 L 815 1347.5 L 815 1372.5 L 913.63 1372.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 918.88 1372.5 L 911.88 1376 L 913.63 1372.5 L 911.88 1369 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 710 1347.5 L 815 1347.5 L 815 1472.5 L 914.47 1472.52" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 710 1347.5 L 815 1347.5 L 815 1472.5 L 914.47 1472.52" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 919.72 1472.52 L 912.72 1476.02 L 914.47 1472.52 L 912.72 1469.02 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="590" y="1317.5" width="120" height="60" fill="#d5e8d4" stroke="#82b366" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1348px; margin-left: 591px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">LB</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1410 1338 L 1500 1338 L 1500 1603.8 L 1422.25 1603.84" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1410 1338 L 1500 1338 L 1500 1603.8 L 1422.25 1603.84" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 1417 1603.84 L 1424 1600.34 L 1422.25 1603.84 L 1424 1607.34 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1290 1272.5 C 1290 1264.22 1316.86 1257.5 1350 1257.5 C 1365.91 1257.5 1381.17 1259.08 1392.43 1261.89 C 1403.68 1264.71 1410 1268.52 1410 1272.5 L 1410 1412.5 C 1410 1420.78 1383.14 1427.5 1350 1427.5 C 1316.86 1427.5 1290 1420.78 1290 1412.5 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path><path d="M 1410 1272.5 C 1410 1280.78 1383.14 1287.5 1350 1287.5 C 1316.86 1287.5 1290 1280.78 1290 1272.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1410 1272.5 C 1410 1280.78 1383.14 1287.5 1350 1287.5 C 1316.86 1287.5 1290 1280.78 1290 1272.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1300" y="1307.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1318px; margin-left: 1320px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1310" y="1317.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1328px; margin-left: 1330px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1320" y="1327.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1338px; margin-left: 1340px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1330" y="1337.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1348px; margin-left: 1350px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1340" y="1347.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1358px; margin-left: 1360px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1350" y="1357.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1368px; margin-left: 1370px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 470 1272.5 L 530 1272.5 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 470 1272.5 L 530 1272.5 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 1362.5 L 581.88 1366 L 583.63 1362.5 L 581.88 1359 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="350" y="1257.5" width="120" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1273px; margin-left: 351px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">GET /mails</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 470 1332.5 L 530 1332.5 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 470 1332.5 L 530 1332.5 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 1362.5 L 581.88 1366 L 583.63 1362.5 L 581.88 1359 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="350" y="1317.5" width="120" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1333px; margin-left: 351px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">GET /mails/{id}</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 470 1455 L 530 1455 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 470 1455 L 530 1455 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 1362.5 L 581.88 1366 L 583.63 1362.5 L 581.88 1359 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="350" y="1440" width="120" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1455px; margin-left: 351px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">DELETE /mails/{id}</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="640" y="810" width="110" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 820px; margin-left: 695px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">CRUD operations</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="480" y="820" width="100" height="80" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="480" y="820" width="100" height="80" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 860px; margin-left: 530px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">GET ALL/some<br>GET ONE<br>CREATE ONE<br>DELETE ONE<br>UPDATE ONE</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1300" y="1220" width="120" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1230px; margin-left: 1360px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MAILS RESOURCE</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="600" y="1287.5" width="50" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="600" y="1287.5" width="50" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1298px; margin-left: 625px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">/mails</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 470 1392.5 L 530 1392.5 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 470 1392.5 L 530 1392.5 L 530 1362.5 L 583.63 1362.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 1362.5 L 581.88 1366 L 583.63 1362.5 L 581.88 1359 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="350" y="1377.5" width="120" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1393px; margin-left: 351px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">POST /mails</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="430" y="1367.5" width="60" height="20" fill="#f8cecc" stroke="#b85450" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1378px; margin-left: 460px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">payload</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1470" y="1240" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect><path d="M 1482 1240 L 1482 1300 M 1578 1240 L 1578 1300" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1482 1240 L 1482 1300 M 1578 1240 L 1578 1300" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 94px; height: 1px; padding-top: 1270px; margin-left: 1483px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">from<br>to<br>subject<br>body</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -30 1367.6 L 230 1367.6 L 230 1272.5 L 343.63 1272.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -30 1367.6 L 230 1367.6 L 230 1272.5 L 343.63 1272.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 1272.5 L 341.88 1276 L 343.63 1272.5 L 341.88 1269 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -30 1367.6 L 230 1367.6 L 230 1332 L 343.63 1332" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -30 1367.6 L 230 1367.6 L 230 1332 L 343.63 1332" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 1332 L 341.88 1335.5 L 343.63 1332 L 341.88 1328.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -30 1367.6 L 230 1367.6 L 230 1392.5 L 343.63 1392.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -30 1367.6 L 230 1367.6 L 230 1392.5 L 343.63 1392.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 1392.5 L 341.88 1396 L 343.63 1392.5 L 341.88 1389 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -30 1290 L 160 1290 L 160 1130 L 116.37 1130" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -30 1290 L 160 1290 L 160 1130 L 116.37 1130" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 111.12 1130 L 118.12 1126.5 L 116.37 1130 L 118.12 1133.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="-150" y="1246.25" width="120" height="242.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1368px; margin-left: -149px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">UI</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -200 1367.5 L -175 1367.5 L -156.37 1367.57" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -200 1367.5 L -175 1367.5 L -156.37 1367.57" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M -151.12 1367.6 L -158.13 1371.07 L -156.37 1367.57 L -158.1 1364.07 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="-215" cy="1345" rx="7.5" ry="7.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse><path d="M -215 1352.5 L -215 1377.5 M -215 1357.5 L -230 1357.5 M -215 1357.5 L -200 1357.5 M -215 1377.5 L -230 1397.5 M -215 1377.5 L -200 1397.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -215 1352.5 L -215 1377.5 M -215 1357.5 L -230 1357.5 M -215 1357.5 L -200 1357.5 M -215 1377.5 L -230 1397.5 M -215 1377.5 L -200 1397.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1405px; margin-left: -215px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">Actor</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="130" y="1770" width="40" height="20" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1780px; margin-left: 150px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 100 1728.8 L 225 1728.8 L 225 1525 L 343.63 1525" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 100 1728.8 L 225 1728.8 L 225 1525 L 343.63 1525" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 1525 L 341.88 1528.5 L 343.63 1525 L 341.88 1521.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="-20" y="1607.5" width="120" height="242.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1729px; margin-left: -19px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">UI</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -190 1728.8 L -105 1728.8 L -26.37 1728.8" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -190 1728.8 L -105 1728.8 L -26.37 1728.8" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M -21.12 1728.8 L -28.12 1732.3 L -26.37 1728.8 L -28.12 1725.3 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="-205" cy="1706.25" rx="7.5" ry="7.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse><path d="M -205 1713.75 L -205 1738.75 M -205 1718.75 L -220 1718.75 M -205 1718.75 L -190 1718.75 M -205 1738.75 L -220 1758.75 M -205 1738.75 L -190 1758.75" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -205 1713.75 L -205 1738.75 M -205 1718.75 L -220 1718.75 M -205 1718.75 L -190 1718.75 M -205 1738.75 L -220 1758.75 M -205 1738.75 L -190 1758.75" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1766px; margin-left: -205px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">Actor</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 470 1525 L 620 1525 L 620 1386.37" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 470 1525 L 620 1525 L 620 1386.37" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 620 1381.12 L 623.5 1388.12 L 620 1386.37 L 616.5 1388.12 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="350" y="1510" width="120" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1525px; margin-left: 351px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">GET /refresh</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="80" y="1770" width="40" height="20" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1780px; margin-left: 100px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1360" y="1372.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1383px; margin-left: 1380px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1370" y="1382.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1393px; margin-left: 1390px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="90" y="1850" width="130" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1860px; margin-left: 155px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">refresh every 2-3 sec</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 230 1130 L 270 1130 L 270 1060 L 303.63 1060" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 230 1130 L 270 1130 L 270 1060 L 303.63 1060" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 308.88 1060 L 301.88 1063.5 L 303.63 1060 L 301.88 1056.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -30 1140 L -30 1193.2 L -90 1193.2 L -90 1239.88" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -30 1140 L -30 1193.2 L -90 1193.2 L -90 1239.88" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M -90 1245.13 L -93.5 1238.13 L -90 1239.88 L -86.5 1238.13 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 230 1130 L 650 1130 L 650 1311.13" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 230 1130 L 650 1130 L 650 1311.13" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 650 1316.38 L 646.5 1309.38 L 650 1311.13 L 653.5 1309.38 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="110" y="1100" width="120" height="60" fill="#f8cecc" stroke="#b85450" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1130px; margin-left: 111px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">AuthServer</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 310 1035 C 310 1026.72 323.43 1020 340 1020 C 347.96 1020 355.59 1021.58 361.21 1024.39 C 366.84 1027.21 370 1031.02 370 1035 L 370 1085 C 370 1093.28 356.57 1100 340 1100 C 323.43 1100 310 1093.28 310 1085 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path><path d="M 370 1035 C 370 1043.28 356.57 1050 340 1050 C 323.43 1050 310 1043.28 310 1035" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 370 1035 C 370 1043.28 356.57 1050 340 1050 C 323.43 1050 310 1043.28 310 1035" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 1073px; margin-left: 311px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">USER</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="-50" y="1120" width="40" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1130px; margin-left: -30px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">token</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 110 1130 L -10 1130" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 110 1130 L -10 1130" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="20" y="1280" width="120" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1290px; margin-left: 80px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">username/password</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="80" y="1357.5" width="40" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1368px; margin-left: 100px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">token</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 690 1282.5 L 690 1302.5 L 710 1302.5 L 710 1311.13" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 690 1282.5 L 690 1302.5 L 710 1302.5 L 710 1311.13" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 710 1316.38 L 706.5 1309.38 L 710 1311.13 L 713.5 1309.38 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="670" y="1262.5" width="40" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1273px; margin-left: 690px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">token</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M -190 1718.75 L -205 1718.8 L -205 1705.12" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M -190 1718.75 L -205 1718.8 L -205 1705.12" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M -205 1699.87 L -201.5 1706.87 L -205 1705.12 L -208.5 1706.87 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1040 1210 L 1165 1210 L 1165 1324.1 L 1284.47 1324.14" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1040 1210 L 1165 1210 L 1165 1324.1 L 1284.47 1324.14" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 1289.72 1324.14 L 1282.72 1327.64 L 1284.47 1324.14 L 1282.72 1320.64 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="920" y="1180" width="120" height="60" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1210px; margin-left: 921px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SErver1</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1040 1462.5 L 1165 1462.5 L 1165 1355.8 L 1283.63 1355.76" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1040 1462.5 L 1165 1462.5 L 1165 1355.8 L 1283.63 1355.76" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 1288.88 1355.76 L 1281.88 1359.26 L 1283.63 1355.76 L 1281.88 1352.26 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="920" y="1432.5" width="120" height="60" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1463px; margin-left: 921px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SErver4</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1040 1287.5 L 1165 1287.5 L 1165 1342.5 L 1283.63 1342.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1040 1287.5 L 1165 1287.5 L 1165 1342.5 L 1283.63 1342.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 1288.88 1342.5 L 1281.88 1346 L 1283.63 1342.5 L 1281.88 1339 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="920" y="1257.5" width="120" height="60" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1288px; margin-left: 921px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SErver2</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1040 1372.5 L 1165 1372.5 L 1165 1342.5 L 1283.63 1342.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1040 1372.5 L 1165 1372.5 L 1165 1342.5 L 1283.63 1342.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 1288.88 1342.5 L 1281.88 1346 L 1283.63 1342.5 L 1281.88 1339 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="920" y="1342.5" width="120" height="60" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1373px; margin-left: 921px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SErver3</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="730" y="1150" width="90" height="30" rx="4.5" ry="4.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 1165px; margin-left: 731px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">cache</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 1290 1525 C 1290 1516.72 1316.86 1510 1350 1510 C 1365.91 1510 1381.17 1511.58 1392.43 1514.39 C 1403.68 1517.21 1410 1521.02 1410 1525 L 1410 1665 C 1410 1673.28 1383.14 1680 1350 1680 C 1316.86 1680 1290 1673.28 1290 1665 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path><path d="M 1410 1525 C 1410 1533.28 1383.14 1540 1350 1540 C 1316.86 1540 1290 1533.28 1290 1525" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 1410 1525 C 1410 1533.28 1383.14 1540 1350 1540 C 1316.86 1540 1290 1533.28 1290 1525" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1300" y="1547.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1558px; margin-left: 1320px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1310" y="1557.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1568px; margin-left: 1330px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1320" y="1567.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1578px; margin-left: 1340px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1330" y="1577.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1588px; margin-left: 1350px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1340" y="1587.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1598px; margin-left: 1360px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1350" y="1597.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1608px; margin-left: 1370px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1300" y="1460" width="120" height="20" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1470px; margin-left: 1360px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MAILS RESOURCE</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1360" y="1612.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1623px; margin-left: 1380px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="1370" y="1622.5" width="40" height="20" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g style=""><g><foreignobject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1633px; margin-left: 1390px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">MSG</div></div></div></foreignobject></g></g></g><g></g><g></g></g></svg><div style="position: fixed; overflow: hidden; box-sizing: border-box; white-space: nowrap; padding: 10px 10px 8px; left: 50%; background-color: rgb(0, 0, 0); border-radius: 16px; transition: opacity 600ms ease-in-out 0s; bottom: 20px; transform: translate(-50%, 0px); opacity: 0; display: none;"><span title="Previous Page" style="padding-left: 0px; padding-right: 4px; cursor: pointer; display: none;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE1LjQxIDcuNDFMMTQgNmwtNiA2IDYgNiAxLjQxLTEuNDFMMTAuODMgMTJsNC41OC00LjU5eiIvPjwvc3ZnPg==" style="width: 36px; filter: invert(100%);"></span><div style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI Variable&quot;, &quot;Segoe UI&quot;, system-ui, ui-sans-serif, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; display: none; vertical-align: top; font-weight: bold; margin-top: 8px; font-size: 14px; color: rgb(255, 255, 255);"></div><span title="Next Page" style="padding-left: 4px; padding-right: 0px; cursor: pointer; display: none;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEwIDZMOC41OSA3LjQxIDEzLjE3IDEybC00LjU4IDQuNTlMMTAgMThsNi02LTYtNnoiLz48L3N2Zz4=" style="width: 36px; filter: invert(100%);"></span><span title="Zoom Out (Alt+Mousewheel)" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuNSAxNGgtLjc5bC0uMjgtLjI3QzE1LjQxIDEyLjU5IDE2IDExLjExIDE2IDkuNSAxNiA1LjkxIDEzLjA5IDMgOS41IDNTMyA1LjkxIDMgOS41IDUuOTEgMTYgOS41IDE2YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTlMMjAuNDkgMTlsLTQuOTktNXptLTYgMEM3LjAxIDE0IDUgMTEuOTkgNSA5LjVTNy4wMSA1IDkuNSA1IDE0IDcuMDEgMTQgOS41IDExLjk5IDE0IDkuNSAxNHpNNyA5aDV2MUg3eiIvPjwvc3ZnPg==" style="width: 36px; filter: invert(100%);"></span><span title="Zoom In (Alt+Mousewheel)" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuNSAxNGgtLjc5bC0uMjgtLjI3QzE1LjQxIDEyLjU5IDE2IDExLjExIDE2IDkuNSAxNiA1LjkxIDEzLjA5IDMgOS41IDNTMyA1LjkxIDMgOS41IDUuOTEgMTYgOS41IDE2YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTlMMjAuNDkgMTlsLTQuOTktNXptLTYgMEM3LjAxIDE0IDUgMTEuOTkgNSA5LjVTNy4wMSA1IDkuNSA1IDE0IDcuMDEgMTQgOS41IDExLjk5IDE0IDkuNSAxNHptMi41LTRoLTJ2Mkg5di0ySDdWOWgyVjdoMXYyaDJ2MXoiLz48L3N2Zz4=" style="width: 36px; filter: invert(100%);"></span><span title="Fit" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUgMTVIM3Y0YzAgMS4xLjkgMiAyIDJoNHYtMkg1di00ek01IDVoNFYzSDVjLTEuMSAwLTIgLjktMiAydjRoMlY1em03IDNjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDQgNC0xLjc5IDQtNC0xLjc5LTQtNC00em0wIDZjLTEuMSAwLTItLjktMi0ycy45LTIgMi0yIDIgLjkgMiAyLS45IDItMiAyem03LTExaC00djJoNHY0aDJWNWMwLTEuMS0uOS0yLTItMnptMCAxNmgtNHYyaDRjMS4xIDAgMi0uOSAyLTJ2LTRoLTJ2NHoiLz48L3N2Zz4=" style="width: 36px; filter: invert(100%);"></span><span title="Layers" style="padding-left: 8px; padding-right: 8px; cursor: pointer; display: none;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTExLjk5IDE4LjU0bC03LjM3LTUuNzNMMyAxNC4wN2w5IDcgOS03LTEuNjMtMS4yN3pNMTIgMTZsNy4zNi01LjczTDIxIDlsLTktNy05IDcgMS42MyAxLjI3TDEyIDE2em0wLTExLjQ3TDE3Ljc0IDkgMTIgMTMuNDcgNi4yNiA5IDEyIDQuNTN6Ii8+PC9zdmc+" style="width: 36px; filter: invert(100%);"></span><span title="Tags" style="padding-left: 8px; padding-right: 8px; cursor: pointer; display: none;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE4cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxwYXRoIGQ9Ik0wLDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvZz48Zz48Zz48cGF0aCBkPSJNMjEuNDEsMTEuNDFsLTguODMtOC44M0MxMi4yMSwyLjIxLDExLjcsMiwxMS4xNywySDRDMi45LDIsMiwyLjksMiw0djcuMTdjMCwwLjUzLDAuMjEsMS4wNCwwLjU5LDEuNDFsOC44Myw4LjgzIGMwLjc4LDAuNzgsMi4wNSwwLjc4LDIuODMsMGw3LjE3LTcuMTdDMjIuMiwxMy40NiwyMi4yLDEyLjIsMjEuNDEsMTEuNDF6IE0xMi44MywyMEw0LDExLjE3VjRoNy4xN0wyMCwxMi44M0wxMi44MywyMHoiLz48Y2lyY2xlIGN4PSI2LjUiIGN5PSI2LjUiIHI9IjEuNSIvPjwvZz48L2c+PC9zdmc+" style="width: 36px; filter: invert(100%);"></span><span title="Print" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE5IDhoLTFWM0g2djVINWMtMS42NiAwLTMgMS4zNC0zIDN2Nmg0djRoMTJ2LTRoNHYtNmMwLTEuNjYtMS4zNC0zLTMtM3pNOCA1aDh2M0g4VjV6bTggMTJ2Mkg4di00aDh2MnptMi0ydi0ySDZ2Mkg0di00YzAtLjU1LjQ1LTEgMS0xaDE0Yy41NSAwIDEgLjQ1IDEgMXY0aC0yeiIvPjxjaXJjbGUgY3g9IjE4IiBjeT0iMTEuNSIgcj0iMSIvPjwvc3ZnPg==" style="width: 36px; filter: invert(100%);"></span><span title="Export" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE0LjEyIDRsMS44MyAySDIwdjEySDRWNmg0LjA1bDEuODMtMmg0LjI0TTE1IDJIOUw3LjE3IDRINGMtMS4xIDAtMiAuOS0yIDJ2MTJjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY2YzAtMS4xLS45LTItMi0yaC0zLjE3TDE1IDJ6bS0zIDdjMS42NSAwIDMgMS4zNSAzIDNzLTEuMzUgMy0zIDMtMy0xLjM1LTMtMyAxLjM1LTMgMy0zbTAtMmMtMi43NiAwLTUgMi4yNC01IDVzMi4yNCA1IDUgNSA1LTIuMjQgNS01LTIuMjQtNS01LTV6Ii8+PC9zdmc+" style="width: 36px; filter: invert(100%);"></span><span title="Edit" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMThweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE0LjA2IDkuMDJsLjkyLjkyTDUuOTIgMTlINXYtLjkybDkuMDYtOS4wNk0xNy42NiAzYy0uMjUgMC0uNTEuMS0uNy4yOWwtMS44MyAxLjgzIDMuNzUgMy43NSAxLjgzLTEuODNjLjM5LS4zOS4zOS0xLjAyIDAtMS40MWwtMi4zNC0yLjM0Yy0uMi0uMi0uNDUtLjI5LS43MS0uMjl6bS0zLjYgMy4xOUwzIDE3LjI1VjIxaDMuNzVMMTcuODEgOS45NGwtMy43NS0zLjc1eiIvPjwvc3ZnPg==" style="width: 36px; filter: invert(100%);"></span></div></div><div class="mxPopupMenu" style="display: inline; z-index: 10006; left: 617.667px; top: 103.333px; overflow: hidden auto; max-height: 567px;"><table class="mxPopupMenu"><tbody><tr class="mxPopupMenuItem"><td class="mxPopupMenuIcon"></td><td class="mxPopupMenuItem" align="left">Clear Default Style</td><td class="mxPopupMenuItem" style="padding-right: 6px; text-align: right;"><span style="color: gray;">Ctrl+Shift+R</span></td></tr></tbody></table></div></body><addoninited id="addonInited" targetelementname="addonInited"></addoninited></html>
